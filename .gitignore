@@ -1,0 +1,12 @@
+# Ignore everything in this directory
+
+# Except this file
+!.gitignore
+/.idea
+.idea
+dist
+node_modules
+tslint.json
+package-lock.json
+logs
+todo.txt
