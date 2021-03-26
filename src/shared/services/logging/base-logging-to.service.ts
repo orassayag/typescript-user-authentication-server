@@ -22,7 +22,7 @@ export class BaseLoggingToService {
     }
   }
 
-  // this function will be overridden for write to file, write to database. etc.
+  // This function will be overridden for write to file, write to database. etc.
   protected async writeLogs(data?): Promise<WriteLogResponse> {
     const response: WriteLogResponse = this.getDefaultWriteLogResponse();
     return Promise.resolve(response);

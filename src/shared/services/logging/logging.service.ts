@@ -70,7 +70,6 @@ export class LoggingService {
 		}
 	}
 
-
 	/******************************************/
 	/*     A P P E N D E R S                  */
 	/******************************************/
@@ -158,7 +157,6 @@ export class LoggingService {
 	public getRequests() {
 		return this.loggingRequests.getRequests();
 	}
-
 
 	/****************************/
 	/*    U T I L S             */

@@ -1,7 +1,7 @@
 import { CookieName } from '../../shared/consts/cookie.consts';
 import { responseService } from '../services/response.service';
 
-// this should be the last middleware after all routes
+// This should be the last middleware after all routes.
 export const errorHandlerMiddleware = (err, req, res, next) => {
 	console.error('errorHandlerMiddleware - an error has occurred:', err);
 	const serverResponse = responseService.getDefaultServerResponse();

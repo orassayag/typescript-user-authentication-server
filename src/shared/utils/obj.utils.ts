@@ -64,7 +64,7 @@ export class ObjUtils {
 					destObj[key] = srcObj[key];
 				} else if (Array.isArray(destObj[key])) {
 					destObj[key] = srcObj[key];
-				} else { // object
+				} else { // Object.
 					if (!destObj.hasOwnProperty(key)) destObj[key] = {};
 					ObjUtils.deepComplementProps(destObj[key], srcObj[key]);
 				}
@@ -109,5 +109,4 @@ export class ObjUtils {
 			}
 		}
 	}
-
 }

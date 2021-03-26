@@ -20,14 +20,14 @@ export class UserRolesRoutes extends BaseRoutes {
 			try {
 				const reqAuthData: ReqAuthData = req['authData'];
 				const userRolesDocs = await this.dbService.readMany(DbCollections.RolesUsers, { userId: reqAuthData.userId, isActive: true });
-				const appIds = [...new Set(userRolesDocs.map(app => app.appId))]; // distinct
+				const appIds = [...new Set(userRolesDocs.map(app => app.appId))]; // Distinct.
 				const userRoles = userRolesDocs.map(item => {
 					delete item._id;
 					delete item.updatedBy;
 					return item;
 				});
 
-				// if user is admin of some app then make sure it can access user management
+				// If the user is an admin of some app then make sure it can access user management.
 				if (!appIds.includes(AppId.UserMgmt) &&
 					userRoles.find(item => item.roleId === AdminRoleId.SuperAdmin || item.appId === AppId.UserMgmt ? item.roleId === AdminRoleId.OemAdmin : item.roleId === AdminRoleId.AppAdmin)) {
 					appIds.push(AppId.UserMgmt);

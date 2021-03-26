@@ -61,5 +61,3 @@ export interface ServerConfigCookies {
     maxAge: number
   }
 }
-
-

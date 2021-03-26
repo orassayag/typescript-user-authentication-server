@@ -5,8 +5,8 @@ import { ConsoleUtils } from '../utils/console.utils';
 import { ObjUtils } from '../utils/obj.utils';
 
 export class DbService {
-  readonly RECONNECT_TRIES = Number.MAX_VALUE;  // endless tries to reconnect
-  readonly RETRIES_INTERVAL = 10000;  // 10 seconds between each try
+  readonly RECONNECT_TRIES = Number.MAX_VALUE;  // Endless tries to reconnect.
+  readonly RETRIES_INTERVAL = 10000;  // 10 seconds between each try.
   readonly connectionOptions = {
     poolSize: 10,
     native_parser: false,
@@ -18,7 +18,7 @@ export class DbService {
     useNewUrlParser: true,
     ssl: false,
     authSource: 'admin',
-    bufferMaxEntries: 0  // prevent the app/request from waiting until the expiration of the reconnection
+    bufferMaxEntries: 0  // Prevent the app/request from waiting until the expiration of the reconnection.
   };
   error;
   client;
@@ -139,7 +139,7 @@ export class DbService {
   }
 
   async insertOneAutoIncrement(collName, doc) {
-    // the auto increment code was taken from mongodb docs
+    // The auto increment code was taken from mongodb docs.
     // https://docs.mongodb.com/v3.0/tutorial/create-an-auto-incrementing-field/
     let results;
     return new Promise<InsertOneWriteOpResult>(async (resolve, reject) => {
@@ -155,7 +155,7 @@ export class DbService {
             results = await this.insertOne(collName, doc);
             isWriteSuccess = true;
           } catch (e) {
-            if (e.code !== 11000) { // duplicate key
+            if (e.code !== 11000) { // Duplicate key.
               reject(results);
             }
           }

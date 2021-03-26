@@ -1,5 +1,4 @@
 import { NextFunction, Request, Response, Router } from 'express';
-
 import { AppId } from '../../shared/consts/app-id.consts';
 import { ServerResponse } from '../../shared/models/server-response.model';
 import { HttpService, httpService } from '../../shared/services/http.service';

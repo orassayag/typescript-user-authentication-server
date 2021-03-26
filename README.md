@@ -7,8 +7,8 @@ Built in March 2019. A small Node.js and TypeScript project to demonstrate real 
 Clone the application to your computer.
 Steps to view the solution:
 1. Open server application on IDE (I use VSCode).
-2. Terminal: npm i
-3. In terminal: npm start
+2. In the terminal: npm i
+3. In the terminal: npm start
 Happy testing! :)
 
 Installation
@@ -73,4 +73,4 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This application has UNLICENSED License.
+This application has an UNLICENSED License.

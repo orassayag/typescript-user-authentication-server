@@ -14,7 +14,7 @@ export class JwtService {
 					}
 				});
 			} catch (err) {
-				loge('token verify error:', err);
+				loge('Token verify error:', err);
 				reject(err);
 			}
 		})
@@ -27,14 +27,14 @@ export class JwtService {
 					if (err) {
 						reject(err);
 					} else if (decoded.iss !== serverConfig.jwt.issuer) {
-						loge('token validation error - issuer is not valid, token:', decoded, serverConfig.jwt.issuer);
-						reject(new Error(`token validation error - issuer is not valid: ${JSON.stringify(decoded)}/${serverConfig.jwt.issuer}`));
+						loge('Token validation error - issuer is not valid, token:', decoded, serverConfig.jwt.issuer);
+						reject(new Error(`Token validation error - issuer is not valid: ${JSON.stringify(decoded)}/${serverConfig.jwt.issuer}`));
 					} else {
 						resolve(decoded);
 					}
 				});
 			} catch (err) {
-				loge('token verify error:', err);
+				loge('Token verify error:', err);
 				reject(err);
 			}
 		})
@@ -51,14 +51,14 @@ export class JwtService {
 
 				jwt.sign(tokenData, encryptionKey || serverConfig.jwt.auth.encryptionKey, claims, (err, token) => {
 					if (err || !token) {
-						loge('jwt sign failed, data:', tokenData, err);
+						loge('JWT sign failed, data:', tokenData, err);
 						reject(err);
 					} else {
 						resolve(token);
 					}
 				});
 			} catch (e) {
-				loge('error signing jwt:', e);
+				loge('Error signing jwt:', e);
 				reject(e);
 			}
 		})

@@ -11,10 +11,10 @@ import { loge, logw } from '../shared/services/logging/logging.service';
 
 export class UaServerAuthService extends AuthService {
 	private readonly AUTH_COOKIE_OPTIONS = {
-		httpOnly: true, // The cookie only accessible by the web server
+		httpOnly: true, // The cookie only accessible by the web server.
 		// sameSite: (serverConfig.isProdEnv ? 'strict' : 'lax'),
 		sameSite: (serverConfig.isProdEnv ? 'strict' : undefined),
-		signed: false // Indicates if the cookie should be signed
+		signed: false // Indicates if the cookie should be signed.
 	};
 
 	constructor(private dbService: DbService) {
@@ -33,26 +33,26 @@ export class UaServerAuthService extends AuthService {
 		// const authCookieData = JSON.stringify(data);
 
 		return [
-			{  // session cookie
+			{  // Session cookie.
 				action: CookieAction.JWT,
 				name: CookieName.Session,
 				data: data,
 				options: Object.assign({}, this.AUTH_COOKIE_OPTIONS, { maxAge: serverConfig.cookies.refresh.maxAge })
 			}
 			/*
-			{  // access cookie
+			{  // Access cookie.
 				action: CookieAction.Add,
 				name: CookieName.Access,
 				data: authCookieData,
 				options: Object.assign({}, this.AUTH_COOKIE_OPTIONS, { maxAge: serverConfig.cookies.access.maxAge })
 			},
-			{  // refresh cookie
+			{  // Refresh cookie.
 				action: CookieAction.Add,
 				name: CookieName.Refresh,
 				data: authCookieData,
 				options: Object.assign({}, this.AUTH_COOKIE_OPTIONS, { maxAge: serverConfig.cookies.refresh.maxAge })
 			},
-			{  // user data cookie - the cookie user can access
+			{  // User data cookie - The cookie user can access.
 				action: CookieAction.Add,
 				name: CookieName.UserData,
 				data: JSON.stringify({ firstName, lastName }),
@@ -64,20 +64,20 @@ export class UaServerAuthService extends AuthService {
 
 	removeAuthCookies(): CookiesResponse {
 		return [
-			{  // access cookie
+			{  // Access cookie.
 				action: CookieAction.Remove,
 				name: CookieName.Session
 			},
 			/*
-			{  // access cookie
+			{  // Access cookie.
 				action: CookieAction.Remove,
 				name: CookieName.Access
 			},
-			{  // refresh cookie
+			{  // Refresh cookie.
 				action: CookieAction.Remove,
 				name: CookieName.Refresh
 			},
-			{  // user data cookie - the cookie user can access
+			{  // User data cookie - The cookie user can access.
 				action: CookieAction.Remove,
 				name: CookieName.UserData
 			}
@@ -99,13 +99,12 @@ export class UaServerAuthService extends AuthService {
 				} else {
 					const roleIds = results[0].map(doc => doc.roleId);
 
-
-					/*  permission are currently not active
+					/*  Permissions are currently not active.
 					const appDoc: AppDoc = results[1];
 					const docRoles = appDoc.roles;
 					const permissions: any = {};
 
-					// combine permissions/operations for all user roles
+					// Combine permissions/operations for all user roles.
 					for (const roleId of roleIds) {
 						const rolePermissions = docRoles[roleId].permissions;
 						if (rolePermissions) {
@@ -121,7 +120,7 @@ export class UaServerAuthService extends AuthService {
 						}
 					}
 
-					// add names for permissions/operations
+					// Add names for permissions/operations.
 					for (const permissionId in permissions) {
 						const appPermission: any = appDoc.permissions[permissionId];
 						if (appPermission) {

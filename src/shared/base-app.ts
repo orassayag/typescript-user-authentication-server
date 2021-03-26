@@ -21,7 +21,6 @@ export class BaseApp {
 	public dbService: DbService = dbService;
 	protected startTime = Date.now();
 
-
 	constructor() {
 		this.app = express();
 	}
@@ -38,13 +37,13 @@ export class BaseApp {
 
 	public initConfig() {
 		this.initHeadersSecurity();
-		this.app.use(bodyParser.json());  // use json form parser middleware
-		this.app.use(bodyParser.urlencoded({ extended: false /* true*/ }));  // use query string parser middleware
+		this.app.use(bodyParser.json());  // Use JSON form parser middleware.
+		this.app.use(bodyParser.urlencoded({ extended: false /* true*/ }));  // Use query string parser middleware.
 		this.app.use(cookieParser()); // "SECRET_GOES_HERE"
 
 		// this.app.use(csurf({ cookie: true }));
-		// this.app.use(csrfTokenMiddleware); // generate csrf cookie in index.html/app.js
-		this.app.use(helmet()); // security - set security-related HTTP response headers
+		// this.app.use(csrfTokenMiddleware); // Generate csrf cookie in index.html/app.js.
+		this.app.use(helmet()); // Security - Set security-related HTTP response headers.
 
 		this.initStaticFiles();
 		this.app.use(logRequestMiddleware);
@@ -56,7 +55,7 @@ export class BaseApp {
 			this.app.use(cors({ credentials: true, origin: true }));
 		}
 
-		this.app.disable('x-powered-by'); // security - hide platform in response header
+		this.app.disable('x-powered-by'); // Security - Hide the platform in response header.
 		this.app.use(responseHeadersMiddleware);
 	}
 

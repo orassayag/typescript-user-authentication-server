@@ -61,7 +61,7 @@ export class AuthRoutes extends BaseRoutes {
 			}
 		});
 
-		// TODO: signup
+		// TODO: signup.
 		this.router.get('/signup', async (req: Request, res: Response, next: NextFunction) => {
 			this.sendSuccess(res, this.authService.getEmptyPermissionsResponse());
 		});

@@ -1,4 +1,4 @@
-// encrypt/decrypt node.js and c#
+// Encrypt/Decrypt Node.js and C#.
 // https://gsferreira.com/archive/2015/02/how-to-encrypt-in-nodejs-and-decrypt-in-c-sharp/
 const crypto = require('crypto');
 
@@ -44,8 +44,8 @@ export class EncryptionService {
 
 	private getNewSalt(length) {
 		return crypto.randomBytes(Math.ceil(length / 2))
-			.toString(this.SALT_FORMAT) /** convert to hexadecimal format */
-			.slice(0, length);   /** return required number of characters */
+			.toString(this.SALT_FORMAT) // Convert to hexadecimal format.
+			.slice(0, length);   // Return required number of characters.
 	}
 }
 

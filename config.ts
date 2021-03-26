@@ -1,9 +1,8 @@
 import { AppId } from './src/shared/consts/app-id.consts';
 import { ObjUtils } from './src/shared/utils/obj.utils';
 
-
 //=========================================================================
-// DEFAULT ENVIRONMENT VARIABLES
+// DEFAULT ENVIRONMENT VARIABLES.
 //=========================================================================
 
 export const DEFAULT_ENV_VARS = {
@@ -57,18 +56,18 @@ export const serverConfig = {
     issuer: 'ua',
     auth: {
       encryptionKey: '1111111111111111',
-      expiresIn: 2592000000, // 1 month
+      expiresIn: 2592000000, // 1 month.
     },
   },
   cookies: {
     access: {
-      maxAge: 1000 * 60 * 15, // in ms, 15 minutes
+      maxAge: 1000 * 60 * 15, // In milliseconds, 15 minutes.
     },
     refresh: {
-      maxAge: 1000 * 60 * 60 * 4, // in ms, 4 hours
+      maxAge: 1000 * 60 * 60 * 4, // In milliseconds, 4 hours.
     },
     userData: {
-      maxAge: 1000 * 60 * 15, // in ms, expire after 15 minutes
+      maxAge: 1000 * 60 * 15, // In milliseconds, expire after 15 minutes.
     },
   },
 };

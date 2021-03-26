@@ -1,5 +1,4 @@
 import { NextFunction, Request, Response } from 'express';
-
 import { BaseRoutes } from '../shared/routes/base.routes';
 import { DbCollections } from '../shared/consts/db-collections.consts';
 import { DbService, dbService } from '../shared/services/db.service';

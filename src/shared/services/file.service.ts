@@ -50,7 +50,7 @@ export class FileService {
     return this.writeFile(path, data, Object.assign({ encoding: 'binary' }, opts));
   }
 
-  // for one-time write better to use createAndCloseFile b/c of open descriptors during long process
+  // For one-time write better to use createAndCloseFile b/c of open descriptors during a long process.
   async writeFile(path, data, opts: any = {}) {
     await this.writeToFile(path, data, opts);
   }
@@ -79,7 +79,7 @@ export class FileService {
   }
 
   async createAndCloseFile(path, data) {
-    // closing now b/c the os closes created files only on process exit, so many fds open until then
+    // Closing now b/c the os closes created files only on process exit, so many fds open until then.
     return new Promise(async (resolve, reject) => {
       let fd = 0;
       try {
