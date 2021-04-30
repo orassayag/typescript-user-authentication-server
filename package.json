@@ -1,7 +1,12 @@
 {
   "name": "typescript-user-authentication-server",
   "version": "1",
+  "private": false,
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/orassayag/typescript-user-authentication-server.git"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node -r ts-node/register src/server.ts -a UATool",
