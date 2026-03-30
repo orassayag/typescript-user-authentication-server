@@ -1,8 +1,25 @@
 {
   "name": "typescript-user-authentication-server",
-  "version": "1",
+  "version": "1.0.0",
   "private": false,
-  "description": "",
+  "description": "A centralized authentication and authorization server built with Node.js, TypeScript, and MongoDB. Provides JWT-based authentication, role-based access control (RBAC), and secure session management for multiple applications.",
+  "keywords": [
+    "authentication",
+    "authorization",
+    "jwt",
+    "rbac",
+    "role-based-access-control",
+    "typescript",
+    "nodejs",
+    "express",
+    "mongodb",
+    "session-management",
+    "security",
+    "user-management",
+    "api-server",
+    "auth-server",
+    "pm2"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/orassayag/typescript-user-authentication-server.git"
@@ -15,8 +32,8 @@
     "debug": "node --inspect -r ts-node/register --preserve-symlinks src/server.ts",
     "compile-to-js": "tsc"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Or Assayag <orassayag@gmail.com> (https://github.com/orassayag)",
+  "license": "MIT",
   "dependencies": {
     "@types/cors": "^2.8.4",
     "@types/express": "^4.11.1",
